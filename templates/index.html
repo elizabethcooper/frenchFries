@@ -1,2 +1,8 @@
-<p>Hello, world</p>
-{{datetime}}
+{% load static %}<!doctype html>
+	<script src="{% static 'js/index.js' %}"></script>
+   	<h1>Hello World</h1>
+    <script>
+        document.write(httpGet(" http://{{ request.get_host }}/fries/datetime/"));
+    </script>
+
+ 
