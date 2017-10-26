@@ -14,6 +14,14 @@ def register(request):
     return render(request, 'register.html')
 
 
+def image(request):
+    username = request.GET.get('username', None)
+    if User.objects.filter(user_name=username).exists():
+        return render(request, 'image.html', {'username': username})
+    else:
+        return render(request, 'index.html', {'message': 'Username not valid'})
+
+
 def welcome(request):
     username = request.GET.get('username', None)
     if User.objects.filter(user_name=username).exists():
