@@ -1,11 +1,8 @@
-{% extends 'index.html' %}
-<!DOCTYPE html>
+{% load static %}
+<!doctype html>
 <html lang="en">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Website CSS style -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Website Font style -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -13,15 +10,20 @@
     <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 
-    <title>Register</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+
+    <title>Fries</title>
 </head>
 <body>
 <div class="container">
     <div class="row main">
         <div class="main-login main-center">
             <h2>Sign up for our awesome application</h2>
-            <form method="post" action="#">
-
+            <form method="post" action="/fries/register/new">
+                {% csrf_token %}
                 <div class="form-group">
                     <label for="name" class="cols-sm-2 control-label">Your Name</label>
                     <div class="cols-sm-10">
@@ -53,17 +55,12 @@
                 </div>
 
                 <div class="form-group ">
-                    <a href="#" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Register</a>
+                    <input type="submit" name="Register" id="button" class="btn btn-primary btn-lg btn-block login-button">
                 </div>
 
             </form>
         </div>
     </div>
 </div>
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.min.js"></script>
 </body>
 </html>
