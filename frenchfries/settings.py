@@ -25,7 +25,7 @@ SECRET_KEY = 'q&nem^)#%f=&&6^%js(lww4r=t^)(4*w-oq7(*5t&fftgn-3ej'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['french-fries.herokuapp.com']
+ALLOWED_HOSTS = ['french-fries.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'frenchfries.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
