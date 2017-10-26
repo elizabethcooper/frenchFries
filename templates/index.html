@@ -2,15 +2,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <script src="{% static 'js/index.js' %}"></script>
-    <script>
-        document.write(httpGet(" http://{{ request.get_host }}/fries/datetime/"));
-    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-    <!-- Website CSS style -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Website Font style -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -18,39 +10,39 @@
     <link href='https://fonts.googleapis.com/css?family=Passion+One' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
 
-    <title>Login</title>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+
+    <title>Fries</title>
 </head>
 <body>
-<div class="container">
-    <div class="row main">
-        <div class="main-login main-center">
-            <h2>Welcome to our awesome application</h2>
-            <h4>Enter your username to login or <a href="register.html">click here to register</a></h4>
-            <form method="post" action="#">
+	<div class="container">
+	    <div class="row main">
+	        <div class="main-login main-center">
+	            <h2>Welcome to our awesome application</h2>
+	            <h4>Enter your username to login or <a href="/fries/register">click here to register</a></h4>
+	            <form method="post" action="/fries/login/user">
+	            	{% csrf_token %}
+	                <div class="form-group">
+	                    <label for="username" class="cols-sm-2 control-label">Username</label>
+	                    <div class="cols-sm-10">
+	                        <div class="input-group">
+	                        	
+	                            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+	                            <input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
+	                        </div>
+	                    </div>
+	                </div>
+	                {{message}}
+	                <div class="form-group ">
+	                	<input type="submit" name="Login" id="button" class="btn btn-primary btn-lg btn-block login-button">
+	                </div>
 
-                <div class="form-group">
-                    <label for="username" class="cols-sm-2 control-label">Username</label>
-                    <div class="cols-sm-10">
-                        <div class="input-group">
-                            <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-group ">
-                    <a href="#" type="button" id="button" class="btn btn-primary btn-lg btn-block login-button">Login</a>
-                </div>
-
-            </form>
-        </div>
-    </div>
-</div>
-
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="js/bootstrap.min.js"></script>
-</body>
-</html>
- 
+	            </form>
+	        </div>
+	    </div>
+	</div>
+	</body>
+	</html>
