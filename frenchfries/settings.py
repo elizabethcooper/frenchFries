@@ -25,7 +25,7 @@ SECRET_KEY = 'q&nem^)#%f=&&6^%js(lww4r=t^)(4*w-oq7(*5t&fftgn-3ej'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['french-fries.herokuapp.com']
 
 
 # Application definition
